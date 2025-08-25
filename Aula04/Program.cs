@@ -14,10 +14,33 @@ namespace MyApp
             Console.WriteLine(message);//referencia da variavel que entrou
         }
 
+        //SOBRECARGA DE MÉTODO
+        //no caso de documentar método sobrecarregado, apenas documente o primeiro
+        static void Print(double value)
+        {
+            Console.WriteLine(value.ToString);
+        }
+        static void Print(int value)
+        {
+            Console.Write(value.ToString());
+        }
+        static void Print(float value)
+        {
+            Console.WriteLine(value.ToString());
+        }
+
+        //várias sobrecargas do próprio print
+
+        
+
+        ///<summary>
+        ///Essa funcao calcula a área de um circulo
+        ///<summary>
+        ///<param name="area"> aqui fica o raio do circulo </param>
+        ///<returns></returns>
         static Double CalcularAreaCirculo (Double area)
         {
             Double saida = 0;
-
             saida = Math.PI * Math.Pow(area, 2);
             // buscar o valor de PI através da função Math
             //Pow é potencia, multiplica área vezes área
@@ -42,7 +65,9 @@ namespace MyApp
             Double area = CalcularAreaCirculo(valor);
             Print(nome + " o valor de área do circulo de raio " + valor + " é: " + area );
 
-            Print(area.ToString());//converte o valor de area para string 
+            //Print(area.ToString());//converte o valor de area para string 
+            //Após a sobrecarga
+            Print(area);
         }
     }
 }
